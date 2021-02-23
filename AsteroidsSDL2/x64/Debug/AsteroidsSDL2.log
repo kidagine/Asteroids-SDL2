@@ -1,8 +1,0 @@
-﻿  Game.cpp
-  GameObject.cpp
-  Player.cpp
-C:\Users\David\Desktop\Dev\Cpp\AsteroidsSDL2\AsteroidsSDL2\Scripts\Player.cpp(11,15): warning C4101: 'e': unreferenced local variable
-  Transform.cpp
-  Vector2D.cpp
-  Generating Code...
-  AsteroidsSDL2.vcxproj -> C:\Users\David\Desktop\Dev\Cpp\AsteroidsSDL2\x64\Debug\AsteroidsSDL2.exe

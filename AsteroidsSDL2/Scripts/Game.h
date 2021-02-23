@@ -2,6 +2,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include <list>
+#include "Vector2D.h"
 
 class Game {
 public:
@@ -13,6 +15,8 @@ public:
 	void Render();
 	void Terminate();
 
+	void static Instantiate();
+	void static Instantiate(Vector2D position);
 	static SDL_Renderer* renderer;
 private:
 	bool isRunning;

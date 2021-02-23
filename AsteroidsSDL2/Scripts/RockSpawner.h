@@ -1,0 +1,20 @@
+#pragma once
+#include <list>
+#include "GameObjects/Rock.h"
+
+
+class RockSpawner {
+	static RockSpawner* instance;
+public:
+	static RockSpawner* getInstance() {
+		if (!instance)
+			instance = new RockSpawner;
+		return instance;
+	}
+	RockSpawner();
+	void SpawnRock();
+	void SpawnRock(Vector2D position);
+	std::list<Rock> GetRocks();
+	void DeleteRock(Rock rock);
+private:
+};
