@@ -5,9 +5,8 @@ class Rock : public GameObject {
 	int id;
 public:
 	bool operator == (const Rock& r) const { return id == r.id; }
-
 	Rock() : GameObject{} {}
-	Rock(Vector2D position) : GameObject(position)
+	Rock(Vector2D position, float angle) : GameObject(position, angle)
 	{
 		Initialize();
 	}
@@ -15,6 +14,7 @@ public:
 	{
 		GameObject::Update();
 		Launch();
+		CheckBounds();
 	}
 	void Render()
 	{
@@ -23,8 +23,10 @@ public:
 	}
 	void Initialize();
 	void Launch();
-protected:
+	void CheckBounds();
+	void HasCollided(SDL_Rect b);
 	SpriteRenderer _spriteRenderer;
-
 private:
+	int speed = 1;
+	int randomAngle = 0;
 };

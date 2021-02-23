@@ -12,6 +12,7 @@ public:
 	{
 		GameObject::Update();
 		Movement();
+		CheckBounds();
 	}
 	void Render()
 	{
@@ -20,7 +21,10 @@ public:
 	}
 	void Initialize();
 	void Movement();
-protected:
+	void CheckBounds();
 	SpriteRenderer _spriteRenderer;
 private:
+	bool hasShot;
+	int movementSpeed = 3;
+	int rotationSpeed = 5;
 };

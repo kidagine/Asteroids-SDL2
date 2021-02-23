@@ -8,6 +8,7 @@ public:
 	void Render();
 	void SetSprite(const char* pathName);
 	SDL_Rect _rect;
+	float _angle = 0;
 private:
 	SDL_Texture* _texture;
 };

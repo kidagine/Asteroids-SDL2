@@ -15,6 +15,8 @@ public:
 	void SpawnRock();
 	void SpawnRock(Vector2D position);
 	std::list<Rock> GetRocks();
+	void Update(SDL_Rect rect);
+	void Render();
 	void DeleteRock(Rock rock);
 private:
 };

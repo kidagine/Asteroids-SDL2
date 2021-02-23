@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "SpriteRenderer.h"
 
 const int FPS = 60;
 const int FRAME_DELAY = 1000 / FPS;
@@ -18,10 +19,11 @@ int main(int argc, char* args[])
 	while (game.Running())
 	{
 		frameStart = SDL_GetTicks();
-
-		game.Update();
-		game.Render();
-
+		if (0 < SDL_GetTicks())
+		{
+			game.Update();
+			game.Render();
+		}
 		frameTime = SDL_GetTicks() - frameStart;
 		if (FRAME_DELAY > frameTime)
 		{

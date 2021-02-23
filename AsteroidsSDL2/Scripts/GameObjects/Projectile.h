@@ -4,7 +4,7 @@
 class Projectile : public GameObject {
 public:
 	Projectile() : GameObject{} {}
-	Projectile(Vector2D position) : GameObject(position)
+	Projectile(Vector2D position, float angle) : GameObject(position, angle)
 	{
 		Initialize();
 	}

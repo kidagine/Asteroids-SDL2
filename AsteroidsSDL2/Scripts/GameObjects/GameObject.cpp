@@ -13,6 +13,13 @@ GameObject::GameObject(Vector2D position)
     _transform.position = position;
 }
 
+GameObject::GameObject(Vector2D position, float angle)
+{
+    _transform = Transform();
+    _transform.position = position;
+    _transform.angle = angle;
+}
+
 void GameObject::Update()
 {
 

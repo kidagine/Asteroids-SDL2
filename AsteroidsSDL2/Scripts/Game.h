@@ -16,7 +16,8 @@ public:
 	void Terminate();
 
 	void static Instantiate();
-	void static Instantiate(Vector2D position);
+	void static Instantiate(Vector2D position, float angle);
+	void static PauseGame();
 	static SDL_Renderer* renderer;
 private:
 	bool isRunning;

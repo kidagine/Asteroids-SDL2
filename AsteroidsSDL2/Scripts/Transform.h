@@ -7,6 +7,7 @@ class Transform {
 public:
 	Transform();
 	Vector2D position;
+	float angle = 0;
 	Vector2D scale;
 private:
 };
