@@ -13,7 +13,17 @@ void RockSpawner::SpawnRock()
     y = rand() % 640;
     int x = rand() % 640;
     int angle = rand() % 180;
-    Rock rock(Vector2D(x, y), angle);
+    Rock rock(Vector2D(x, y),Vector2D(3, 3),angle);
+    rocks.push_front(rock);
+}
+
+void RockSpawner::SpawnRock(Vector2D position, Vector2D scale)
+{
+    srand(seed);
+    seed++;
+    int angle = rand() % 180;
+    angle = rand() % 180;
+    Rock rock(position, scale, angle);
     rocks.push_front(rock);
 }
 
@@ -39,10 +49,14 @@ void RockSpawner::Render()
 
 void RockSpawner::DeleteRock(Rock rock)
 {
+    for (int i = 0; i < rock.rocksToSpawn; i++)
+    {
+        SpawnRock(rock._transform.position, Vector2D(rock._transform.scale.x - 1, rock._transform.scale.y - 1));
+    }
    rocks.remove(rock);
    if (rocks.size() == 0)
    {
-       Game::PauseGame();
+       Game::Won();
    }
 }
 

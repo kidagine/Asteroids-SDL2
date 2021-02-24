@@ -25,4 +25,5 @@ public:
 protected:
 	SpriteRenderer _spriteRenderer;
 private:
+	bool isDestroyed;
 };

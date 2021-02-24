@@ -8,6 +8,6 @@ public:
 	Transform();
 	Vector2D position;
 	float angle = 0;
-	Vector2D scale;
+	Vector2D scale = Vector2D(1, 1);
 private:
 };

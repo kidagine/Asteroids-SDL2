@@ -17,7 +17,8 @@ public:
 
 	void static Instantiate();
 	void static Instantiate(Vector2D position, float angle);
-	void static PauseGame();
+	void static Won();
+	void static Lost();
 	static SDL_Renderer* renderer;
 private:
 	bool isRunning;

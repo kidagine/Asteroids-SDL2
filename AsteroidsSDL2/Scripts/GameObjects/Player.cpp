@@ -50,26 +50,9 @@ void Player::Movement()
             hasShot = true;
         }
     }
-
     _spriteRenderer._rect.x = _transform.position.x;
     _spriteRenderer._rect.y = _transform.position.y;
     _spriteRenderer._angle = _transform.angle;
-    //if (previousPosition.x != _transform.position.x || previousPosition.y != _transform.position.y)
-    //{
-    //    if (!isMoving)
-    //    {
-    //        isMoving = true;
-    //        _spriteRenderer.SetSprite(PLAYER_RUN_SPRITE);
-    //    }
-    //}
-    //else 
-    //{
-    //    if (isMoving)
-    //    {
-    //        isMoving = false;
-    //        _spriteRenderer.SetSprite(PLAYER_IDLE_SPRITE);
-    //    }
-    //}
 }
 
 void Player::CheckBounds()

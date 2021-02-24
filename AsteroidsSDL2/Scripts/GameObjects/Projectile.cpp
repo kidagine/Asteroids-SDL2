@@ -21,32 +21,36 @@ void Projectile::Launch()
 
 void Projectile::HasCollided()
 {
-    RockSpawner* rockSpawner = rockSpawner->getInstance();
-    std::list<Rock> rocks = rockSpawner->GetRocks();
-    for (std::list<Rock>::iterator it = rocks.begin(); it != rocks.end(); ++it) {
-        SDL_Rect a = _spriteRenderer._rect;
-        SDL_Rect b = it->_spriteRenderer._rect;
+    if (!isDestroyed)
+    {
+        RockSpawner* rockSpawner = rockSpawner->getInstance();
+        std::list<Rock> rocks = rockSpawner->GetRocks();
+        for (std::list<Rock>::iterator it = rocks.begin(); it != rocks.end(); ++it) {
+            SDL_Rect a = _spriteRenderer._rect;
+            SDL_Rect b = it->_spriteRenderer._rect;
         
-        int leftA, leftB;
-        int rightA, rightB;
-        int topA, topB;
-        int bottomA, bottomB;
+            int leftA, leftB;
+            int rightA, rightB;
+            int topA, topB;
+            int bottomA, bottomB;
 
-        leftA = a.x;
-        rightA = a.x + a.w;
-        topA = a.y;
-        bottomA = a.y + a.h;
+            leftA = a.x;
+            rightA = a.x + a.w;
+            topA = a.y;
+            bottomA = a.y + a.h;
 
-        leftB = b.x;
-        rightB = b.x + b.w;
-        topB = b.y;
-        bottomB = b.y + b.h;
-        if (bottomA <= topB || topA >= bottomB || rightA <= leftB || leftA >= rightB)
-        {
-        }
-        else 
-        {
-            rockSpawner->DeleteRock(*it);
+            leftB = b.x;
+            rightB = b.x + b.w;
+            topB = b.y;
+            bottomB = b.y + b.h;
+            if (bottomA <= topB || topA >= bottomB || rightA <= leftB || leftA >= rightB)
+            {
+            }
+            else 
+            {
+                isDestroyed = true;
+                rockSpawner->DeleteRock(*it);
+            }
         }
     }
 }

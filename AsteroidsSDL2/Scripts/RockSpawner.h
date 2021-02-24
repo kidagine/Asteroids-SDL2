@@ -13,7 +13,7 @@ public:
 	}
 	RockSpawner();
 	void SpawnRock();
-	void SpawnRock(Vector2D position);
+	void SpawnRock(Vector2D position, Vector2D scale);
 	std::list<Rock> GetRocks();
 	void Update(SDL_Rect rect);
 	void Render();

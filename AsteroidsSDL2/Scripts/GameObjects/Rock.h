@@ -10,6 +10,10 @@ public:
 	{
 		Initialize();
 	}
+	Rock(Vector2D position, Vector2D scale, float angle) : GameObject(position, scale, angle)
+	{
+		Initialize();
+	}
 	void Update()
 	{
 		GameObject::Update();
@@ -26,7 +30,7 @@ public:
 	void CheckBounds();
 	void HasCollided(SDL_Rect b);
 	SpriteRenderer _spriteRenderer;
+	int rocksToSpawn = 2;
 private:
-	int speed = 1;
-	int randomAngle = 0;
+	int speed;
 };

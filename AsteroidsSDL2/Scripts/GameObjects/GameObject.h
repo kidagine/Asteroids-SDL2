@@ -8,8 +8,9 @@ public:
 	GameObject();
 	GameObject(Vector2D position);
 	GameObject(Vector2D position, float angle);
+	GameObject(Vector2D position, Vector2D scale, float angle);
 	void Update();
 	void Render();
-protected:
 	Transform _transform;
+protected:
 };

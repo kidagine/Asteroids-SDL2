@@ -9,16 +9,21 @@ void Rock::Initialize()
     _spriteRenderer = SpriteRenderer(ROCK_SMALL_SPRITE);
     _spriteRenderer._rect.x = _transform.position.x;
     _spriteRenderer._rect.y = _transform.position.y;
-    _spriteRenderer._rect.h = 96;
-    _spriteRenderer._rect.w = 96; 
+    _spriteRenderer._rect.h = _transform.scale.x * _spriteRenderer._rect.h;
+    _spriteRenderer._rect.w = _transform.scale.y * _spriteRenderer._rect.w;
     _spriteRenderer._angle = _transform.angle;
+    speed = _transform.scale.x - 4;
+    if (_transform.scale.x == 1)
+    {
+        rocksToSpawn = 0;
+    }
     id = rand() % 1000 + 1;
 }
 
 void Rock::Launch()
 {
-    _transform.position.x += cos(3.14 * _transform.angle / 180.0) * 1;
-    _transform.position.y += sin(3.14 * _transform.angle / 180.0) * 1;
+    _transform.position.x += cos(3.14 * _transform.angle / 180.0) * speed;
+    _transform.position.y += sin(3.14 * _transform.angle / 180.0) * speed;
     _spriteRenderer._rect.x = _transform.position.x;
     _spriteRenderer._rect.y = _transform.position.y;
 }
@@ -46,7 +51,7 @@ void Rock::HasCollided(SDL_Rect b)
     }
     else
     {
-        Game::PauseGame();
+        Game::Lost();
     }
 }
 
