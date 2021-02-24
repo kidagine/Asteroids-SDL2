@@ -10,14 +10,20 @@ public:
 	}
 	void Update()
 	{
-		GameObject::Update();
-		Launch();
-		HasCollided();
+		if (!isDestroyed)
+		{
+			GameObject::Update();
+			Launch();
+			HasCollided();
+		}
 	}
 	void Render()
 	{
-		GameObject::Render();
-		_spriteRenderer.Render();
+		if (!isDestroyed)
+		{
+			GameObject::Render();
+			_spriteRenderer.Render();
+		}
 	}
 	void Initialize();
 	void Launch();
