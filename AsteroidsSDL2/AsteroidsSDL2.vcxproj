@@ -155,10 +155,10 @@
   <ItemGroup>
     <ClCompile Include="Scripts\Game.cpp" />
     <ClCompile Include="Scripts\GameObjects\GameObject.cpp" />
-    <ClCompile Include="Scripts\Main.cpp" />
     <ClCompile Include="Scripts\GameObjects\Player.cpp" />
     <ClCompile Include="Scripts\GameObjects\Projectile.cpp" />
     <ClCompile Include="Scripts\GameObjects\Rock.cpp" />
+    <ClCompile Include="Scripts\Main.cpp" />
     <ClCompile Include="Scripts\RockSpawner.cpp" />
     <ClCompile Include="Scripts\SpriteRenderer.cpp" />
     <ClCompile Include="Scripts\Transform.cpp" />

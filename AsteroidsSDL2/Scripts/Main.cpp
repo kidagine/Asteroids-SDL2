@@ -1,6 +1,9 @@
 #include "Game.h"
 #include "SpriteRenderer.h"
+
+#ifdef __EMUSCRIPTEN__
 #include <emscripten.h>
+#endif
 
 const int FPS = 60;
 const int FRAME_DELAY = 1000 / FPS;
